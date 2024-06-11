@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('username')->index();
-            $table->string('discord_id')->index();
+            $table->string('discord_id')->index()->unique();
             $table->boolean('is_admin')->default(false);
             $table->timestamps();
         });
